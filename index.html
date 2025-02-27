@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUBWAY</title>
+
+
+
+
+
+<marquee direction="down" width="1400" height="350"
+behavior="alternate"
+style="border:solid">
+
+<marquee behavior="alternate">
+<img src="LOGO.jpg" width="300" height="250">
+</marquee>
+</marquee>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: green;
+            text-align: center;
+            margin: 20px;
+        }
+        #info {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: inline-block;
+            text-align: left;
+            max-width: 600px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+        .imagenes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .imagenes img {
+            width: 110px;
+            border-radius: 5px;
+        }
+        .contacto {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .contacto a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contacto a:hover {
+            text-decoration: underline;
+        }
+        .mision-vision {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e3e3e3;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SUBWAY</h1>
+    <p>Eat Fresh:</p>
+
+    <button onclick="mostrarInfo('Precios')">Precios</button>
+    <button onclick="mostrarInfo('Ofertas')">Ofertas</button>
+    <button onclick="mostrarInfo('Contactanos')">Contáctanos</button>
+    <button onclick="mostrarInfo('MasSobreNosotros')">MÁS SOBRE NOSOTROS</button>
+
+    <div id="info"></div>
+
+    <script>
+        function mostrarInfo(tipo) {
+            let info = document.getElementById('info');
+            if (tipo === 'Precios') {
+                info.innerHTML = `
+                    <h2>Nuestros Precios</h2>
+                    <p>Consulta nuestros precios y disfruta de nuestros deliciosos sándwiches.</p>
+                    <div class="imagenes">
+                        <img src="pollo.jpg" alt="Sándwich de pollo">
+                        <p>Q55.00</p>
+                        <img src="jamon2.jpg" alt="Sándwich de jamón">
+                        <p>Q65.00</p>
+                        <img src="atun.jpg" alt="Sándwich de atún">
+                        <p>Q75.00</p>
+                    </div>
+                `;
+            } else if (tipo === 'Ofertas') {
+                info.innerHTML = `
+                    <h2>Ofertas Especiales</h2>
+                    <p>Aprovecha nuestras promociones y descuentos exclusivos.</p>
+                    <div class="imagenes">
+                        <img src="combo1.jpg" alt="Combo 1: 2x1 en Sándwiches">
+                        <img src="combo2.jpg" alt="Combo 2: Sándwich + Bebida Gratis">
+                        <img src="oferta3.jpg" alt="Combo 3: Descuento en Menú Familiar">
+                    </div>
+                `;
+            } else if (tipo === 'Contactanos') {
+                info.innerHTML = `
+                    <h2>Contáctanos</h2>
+                    <div class="contacto">
+                        <p><strong>📞 Teléfono:</strong> +123 456 789</p>
+                        <p><strong>📸 Instagram:</strong> <a href="https://www.instagram.com/subway/" target="_blank">@subway</a></p>
+                        <p><strong>🌍 Página Web:</strong> <a href="https://www.subway.com" target="_blank">Visita Subway</a></p>
+                    </div>
+                `;
+            } else if (tipo === 'MasSobreNosotros') {
+                info.innerHTML = `
+                    <h2>Más Sobre Nosotros</h2>
+                    <p>Conoce a nuestro equipo, misión y visión.</p>
+                    <div class="imagenes">
+                        <img src="equipo.jpg" alt="Nuestra historia">
+                        <img src="sub.jpg" alt="Nuestro equipo">
+                    </div>
+                    <div class="mision-vision">
+                        <h3>Mision</h3>
+                        <p>Nuestra misión es ofrecer alimentos frescos y saludables.</p>
+                        <h3>Visión</h3>
+                        <p>Ser la cadena de restaurantes más querida a nivel mundial.</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
